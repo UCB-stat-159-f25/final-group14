@@ -25,4 +25,8 @@ def qmap(shape, col, title=None, cmap="viridis", k=6, figsize=(10,10), save=None
         )
 
     ax.set_title(title if title else col, fontsize=14)
+    
+    if save:
+        plt.savefig(save, dpi=300, bbox_inches="tight")
     plt.show()
+    plt.close(fig)
