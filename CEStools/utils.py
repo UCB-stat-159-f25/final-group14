@@ -6,7 +6,39 @@ import numpy as np
 
 def qmap(shape, col, title=None, cmap="viridis", k=6, figsize=(10,10), save=None, bins=None):
     """
-    Reminder to add docstring function defintion!
+    Create a choropleth map from a GeoDataFrame using either quantile-based
+    classification or user-defined bins.
+
+    This function plots a geographic variable from a GeoDataFrame and optionally
+    saves the resulting figure to disk. If `bins` is not provided, the data are
+    classified into quantiles. If `bins` is provided, a fixed bin classification
+    is used, allowing for consistent legends across multiple maps.
+
+    Parameters
+    ----------
+    shape : geopandas.GeoDataFrame
+        GeoDataFrame containing geometry and the variable to be mapped.
+    col : str
+        Name of the column in `shape` to visualize.
+    title : str, optional
+        Title of the map. If None, the column name is used.
+    cmap : str, default "viridis"
+        Matplotlib colormap used for the choropleth.
+    k : int, default 6
+        Number of quantiles to use when `bins` is None.
+    figsize : tuple of int, default (10, 10)
+        Size of the figure in inches (width, height).
+    save : str or None, default None
+        File path to save the figure. If None, the figure is not saved.
+    bins : list or array-like, optional
+        User-defined bin edges for classification. If provided, overrides
+        quantile-based classification.
+
+    Returns
+    -------
+    None
+        The function displays the map and optionally saves it to disk, but does
+        not return any objects.
     """
 
     fig, ax = plt.subplots(1, 1, figsize=figsize)
