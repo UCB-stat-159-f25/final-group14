@@ -7,3 +7,20 @@ Index(['Tract', 'ZIP', 'County', 'ApproxLoc', 'TotPop19', 'CIscore', 'CIscoreP',
     'CardiovasP', 'EducatP', 'Ling_IsolP', 'PovertyP', 'UnemplP',
     'HousBurdP', 'PopCharP'
 ]
+
+
+
+
+## Makefile (execute notebooks)
+
+Q (to AI):
+“How do I create a Makefile that satisfies the requirement:  `all` executes all notebooks ?”
+
+AI output (summary):
+- use 'nbconvert'
+- `all` should run all `.ipynb` notebooks using `jupyter nbconvert --execute` (often with an explicit notebook list for a fixed execution order).
+
+Example Makefile snippet:
+NOTEBOOKS = map_descriptive_analysis.ipynb chart_descriptive_analysis.ipynb kmeans_analysis.ipynb main.ipynb
+all:
+	jupyter nbconvert --to notebook --execute $(NOTEBOOKS) --inplace
