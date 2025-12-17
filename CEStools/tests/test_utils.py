@@ -1,7 +1,8 @@
-# from CEStools.utils import qmap
+from CEStools.utils import qmap
 from CEStools.utils import clean_data
 import pytest
 import pandas as pd
+import os
 import geopandas as gpd
 from shapely import Point
 
@@ -32,3 +33,29 @@ def test_clean_data_no_geom():
 	out = clean_data(gdf, keep_geom=True)
 
 	assert "geometry" in out.columns
+
+
+def test_qmap_runs():
+    gdf = gpd.GeoDataFrame(
+        {"value": [1, 2, 3]},
+        geometry=[Point(0, 0), Point(1, 1), Point(2, 2)]
+    )
+    
+    qmap(gdf, col="value")
+
+def test_qmap_saves_file(tmp_path):
+    gdf = gpd.GeoDataFrame(
+        {"value": [1, 2, 3]},
+        geometry=[Point(0, 0), Point(1, 1), Point(2, 2)]
+    )
+
+    output_path = tmp_path / "test_map.png"
+
+    qmap(
+        gdf,
+        col="value",
+        bins=[1, 2, 3],
+        save=str(output_path)
+    )
+
+    assert output_path.exists()
