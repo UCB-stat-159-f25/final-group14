@@ -1,5 +1,6 @@
-from CEStools.utils import qmap
-from CEStools.utils import clean_data
+import sys
+sys.path.append("..")
+from CEStools.utils import clean_data, qmap
 import pytest
 import pandas as pd
 import os
@@ -14,7 +15,6 @@ def test_clean_data_cols_exist():
 	
 	with pytest.raises(KeyError, match="Missing required columns"):
 		clean_data(df)
-
 
 def test_clean_data_no_geom():
 	pctl_cols = ['CIscoreP', 'OzoneP', 'PM2_5_P', 'DieselPM_P', 'PesticideP',
