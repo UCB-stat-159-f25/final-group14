@@ -25,6 +25,7 @@ This project uses the CalEnviroScreen 4.0 dataset to analyze the relationships b
 - `main.ipynb`: Main project notebook, providing an overview of the analysis and results 
 - `environment.yml`: Environment file specifying the required packages for the project  
 - `Makefile`: Makefile to automate environment setup and execution of analysis notebooks
+- `pdf_builds/`: Contains pdf versions of each notebook
 
 ## Usage
 
@@ -61,11 +62,3 @@ ans analysis
 - `main.ipynb`: Main project notebook, providing an overview of the analysis and results 
 - `environment.yml`: Environment file specifying the required packages for the project  
 - `Makefile`: Makefile to automate environment setup and execution of analysis notebooks
-
-## License
-
-This project is licensed under the BSD 3-Clause License.
-
-## Bibliography 
-
-Our analysis uses the CalEnviroScreen 4.0 census tract shapefiles [@calenviroscreen40shp]. We also used the CalEnviroScreen 4.0 data dictionary to help interpret score components and variable definitions [@calenviroscreen40].
