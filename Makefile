@@ -17,6 +17,3 @@ all:
 	@echo ">>> Executing all notebooks..."
 	jupyter nbconvert --to notebook --execute $(NOTEBOOKS) --inplace
 	@echo ">>> All notebooks executed successfully."
-
-test:
-	pytest -q
