@@ -1,4 +1,4 @@
-name: ligo
+name: CES
 channels:
   - conda-forge
 dependencies:
