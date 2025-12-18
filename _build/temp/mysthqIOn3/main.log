@@ -1,0 +1,483 @@
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.12.10)  18 DEC 2025 05:41
+entering extended mode
+ \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base
+/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count181
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@subparagraph=\count186
+\c@figure=\count187
+\c@table=\count188
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2021-06-07 v7.00m Hypertext links for LaTeX
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+) (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+)
+\@linkdim=\dimen139
+\Hy@linkcounter=\count189
+\Hy@pagecounter=\count190
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2021-06-07 v7.00m Hyperref: PDFDocEncoding definition (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def
+File: hyperref-langpatches.def 2021-06-07 v7.00m Hyperref: patches for babel la
+nguages
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count191
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2021-06-07 v7.00m Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4192.
+Package hyperref Info: Link nesting OFF on input line 4197.
+Package hyperref Info: Hyper index ON on input line 4200.
+Package hyperref Info: Plain pages OFF on input line 4207.
+Package hyperref Info: Backreferencing OFF on input line 4212.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4445.
+\c@Hy@tempcnt=\count192
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4804.
+\XeTeXLinkMargin=\dimen140
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count193
+\Field@Width=\dimen141
+\Fld@charsize=\dimen142
+Package hyperref Info: Hyper figures OFF on input line 6076.
+Package hyperref Info: Link nesting OFF on input line 6081.
+Package hyperref Info: Hyper index ON on input line 6084.
+Package hyperref Info: backreferencing OFF on input line 6091.
+Package hyperref Info: Link coloring OFF on input line 6096.
+Package hyperref Info: Link coloring with OCG OFF on input line 6101.
+Package hyperref Info: PDF/A mode OFF on input line 6106.
+LaTeX Info: Redefining \ref on input line 6146.
+LaTeX Info: Redefining \pageref on input line 6150.
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count194
+\c@Item=\count195
+\c@Hfootnote=\count196
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2021-06-07 v7.00m Hyperref driver for XeTeX
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box50
+\c@Hy@AnnotLevel=\count197
+\HyField@AnnotCount=\count198
+\Fld@listcount=\count199
+\c@bookmark@seq@number=\count266
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+) (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip49
+) (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime.sty
+Package: datetime 2015/03/20 v2.60 Date Time Package
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count267
+) (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fmtcount 2020/01/30 v3.07
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texl
+ive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+)
+\XKV@depth=\count268
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fcprefix 2012/09/28
+(/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+Package: fcnumparser 2017/06/15
+\fc@digit@counter=\count269
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen143
+)
+\c@padzeroesN=\count270
+\fc@tmpcatcode=\count271
+\@DT@modctr=\count272
+\@ordinalctr=\count273
+\@orgargctr=\count274
+\@strctr=\count275
+\@tmpstrctr=\count276
+\@DT@loopN=\count277
+\@DT@X=\count278
+) (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty
+Package: datetime-defaults 2013/09/10
+)
+\@day=\count279
+\@month=\count280
+\@year=\count281
+\c@HOUR=\count282
+\c@HOURXII=\count283
+\c@MINUTE=\count284
+\c@TOHOUR=\count285
+\c@TOMINUTE=\count286
+\c@SECOND=\count287
+\currenthour=\count288
+\currentminute=\count289
+\currentsecond=\count290
+Package datetime Info: No datetime.cfg file found, using default settings on in
+put line 308.
+\@dtctr=\count291
+\dayofyear=\count292
+\dayofweek=\count293
+LaTeX Info: Redefining \today on input line 736.
+\dt@a=\toks20
+\dt@b=\toks21
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2021/03/18 v5.0k Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen144
+\Gin@req@width=\dimen145
+) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip50
+\bibsep=\skip51
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count294
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 16.
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
+(|extractbb --version)
+\c__kernel_sys_dvipdfmx_version_int=\count295
+\l__color_backend_stack_int=\count296
+\g__color_backend_stack_int=\count297
+\g__graphics_track_int=\count298
+\l__pdf_internal_box=\box51
+\g__pdf_backend_object_int=\count299
+\g__pdf_backend_annotation_int=\count300
+\g__pdf_backend_link_int=\count301
+) (./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+9.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 149.
+)
+Package hyperref Info: Link coloring ON on input line 29.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count302
+)
+LaTeX Info: Redefining \ref on input line 29.
+LaTeX Info: Redefining \pageref on input line 29.
+LaTeX Info: Redefining \nameref on input line 29.
+(./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def
+Invalid UTF-8 byte or sequence at line 10 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 22 replaced by U+FFFD.
+File: fc-english.def 2016/01/12
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 31.
+File: curvenote.png Graphic file (type bmp)
+<curvenote.png>
+File: files/reported_fig1-790cd40c874b0e30fbb25b4aa290536b.png Graphic file (ty
+pe bmp)
+<files/reported_fig1-790cd40c874b0e30fbb25b4aa290536b.png>
+[1
+
+]
+File: files/fig1_majorityrace_Ba-2d5522c93e079a8bf9d4411364c43a48.png Graphic f
+ile (type bmp)
+<files/fig1_majorityrace_Ba-2d5522c93e079a8bf9d4411364c43a48.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
+
+ []
+
+[2]
+File: files/reported_fig2-2742ba030148bf2a554ed00c076dd4c3.png Graphic file (ty
+pe bmp)
+<files/reported_fig2-2742ba030148bf2a554ed00c076dd4c3.png>
+File: files/fig2_topbottom_piech-3ffb872b256c23613dfce62a2148c88e.png Graphic f
+ile (type bmp)
+<files/fig2_topbottom_piech-3ffb872b256c23613dfce62a2148c88e.png>
+File: files/reported_fig3-b6283b14e3d92863a4bfc5e6b1e2e9c8.png Graphic file (ty
+pe bmp)
+<files/reported_fig3-b6283b14e3d92863a4bfc5e6b1e2e9c8.png>
+[3]
+File: files/fig3_racialmakeupbyd-d9cf1f156092202d36c41aac8454ff5d.png Graphic f
+ile (type bmp)
+<files/fig3_racialmakeupbyd-d9cf1f156092202d36c41aac8454ff5d.png>
+File: files/reported_fig4-5ab746d5223a9ba32f6d9d3289b575d4.png Graphic file (ty
+pe bmp)
+<files/reported_fig4-5ab746d5223a9ba32f6d9d3289b575d4.png>
+[4]
+File: files/fig4_top10perctracts-13706f92afd644d73ac6bcfa61a73e49.png Graphic f
+ile (type bmp)
+<files/fig4_top10perctracts-13706f92afd644d73ac6bcfa61a73e49.png>
+
+Overfull \hbox (19.20401pt too wide) in paragraph at lines 87--88
+[]\TU/lmr/m/n/10 Across key socioeconomic indicators—education, poverty, and li
+nguistic isolation-
+ []
+
+[5]
+File: files/fig5_topbottom_educa-0c67df4f9143ab3f364b4e38cdb402af.png Graphic f
+ile (type bmp)
+<files/fig5_topbottom_educa-0c67df4f9143ab3f364b4e38cdb402af.png>
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 106--106
+[]\TU/lmtt/m/n/10 race_cols = ['Hispanic','White','AfricanAm','NativeAm','Other
+Mult','AAPI'][] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 106--106
+[]    \TU/lmtt/m/n/10 display(Image(filename=str(MAP_DIR / f"race_{r}_fixedbins
+.png"), width=300))[] 
+ []
+
+File: files/04bcf1950264083695ea326ed53d2e49.png Graphic file (type bmp)
+<files/04bcf1950264083695ea326ed53d2e49.png>
+[6]
+File: files/29e9419776d0f037872edcc7dc08a31c.png Graphic file (type bmp)
+<files/29e9419776d0f037872edcc7dc08a31c.png>
+[7]
+File: files/594123adc131df85d4a27e5769dd9380.png Graphic file (type bmp)
+<files/594123adc131df85d4a27e5769dd9380.png>
+[8]
+File: files/ec084e71075b3f7d46445c4df7b3c335.png Graphic file (type bmp)
+<files/ec084e71075b3f7d46445c4df7b3c335.png>
+[9]
+File: files/9c02193b88291c0a963ddbdd98185341.png Graphic file (type bmp)
+<files/9c02193b88291c0a963ddbdd98185341.png>
+[10]
+File: files/54fda6d7cee8a7e8ea649c536b3fb643.png Graphic file (type bmp)
+<files/54fda6d7cee8a7e8ea649c536b3fb643.png>
+[11]
+Overfull \hbox (96.0pt too wide) in paragraph at lines 130--130
+[]    \TU/lmtt/m/n/10 display(Image(filename=str(MAP_DIR / f"bivariate_{r}_{bur
+den}.png"), width=300))[] 
+ []
+
+File: files/b8d2a879b83c70e7dd72451078bba8e0.png Graphic file (type bmp)
+<files/b8d2a879b83c70e7dd72451078bba8e0.png>
+[12]
+File: files/abb699534f2704dd8c4190e12f42d1fa.png Graphic file (type bmp)
+<files/abb699534f2704dd8c4190e12f42d1fa.png>
+File: files/256ce61a95f385d13b99d4b162e6bd07.png Graphic file (type bmp)
+<files/256ce61a95f385d13b99d4b162e6bd07.png>
+[13]
+File: files/c351f6dc8ff2b8c227c0a312adf0b924.png Graphic file (type bmp)
+<files/c351f6dc8ff2b8c227c0a312adf0b924.png>
+File: files/166a187228832a1c9eab68d3b960c829.png Graphic file (type bmp)
+<files/166a187228832a1c9eab68d3b960c829.png>
+[14]
+File: files/31d84ee30fe826d021d04dc894526727.png Graphic file (type bmp)
+<files/31d84ee30fe826d021d04dc894526727.png>
+[15]
+Overfull \hbox (132.75pt too wide) in paragraph at lines 154--154
+[]    \TU/lmtt/m/n/10 display(Image(filename=str(MAP_DIR / f"overlap_hotspots_{
+r}_{burden}.png"), width=300))[] 
+ []
+
+File: files/dd7c8bc58d6497eeaacfd6ab31a2847b.png Graphic file (type bmp)
+<files/dd7c8bc58d6497eeaacfd6ab31a2847b.png>
+[16]
+File: files/19f2c861dc7fb07eaab309a9730ed6d6.png Graphic file (type bmp)
+<files/19f2c861dc7fb07eaab309a9730ed6d6.png>
+[17]
+File: files/c93959ea2d42129373a94055ffcd35aa.png Graphic file (type bmp)
+<files/c93959ea2d42129373a94055ffcd35aa.png>
+[18]
+File: files/bb98fcda2809cb1df83b32dbe100fb1a.png Graphic file (type bmp)
+<files/bb98fcda2809cb1df83b32dbe100fb1a.png>
+[19]
+File: files/c2df0871129c56c94b02ed347a227517.png Graphic file (type bmp)
+<files/c2df0871129c56c94b02ed347a227517.png>
+[20]
+File: files/1cc448f55853dce85b9bc369fda8905c.png Graphic file (type bmp)
+<files/1cc448f55853dce85b9bc369fda8905c.png>
+[21] [22] [23]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 194--194
+[]\TU/lmtt/m/n/10 display(Image(filename=str(KMEANS_DIR / "elbowvssilohuette_ch
+art.png")))[] 
+ []
+
+File: files/395e0b6b9964b344fb119656951b54eb.png Graphic file (type bmp)
+<files/395e0b6b9964b344fb119656951b54eb.png>
+[24]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 214--214
+[]\TU/lmtt/m/n/10 display(Image(filename=str(KMEANS_DIR / "cluster_heatmap_2.pn
+g")))[] 
+ []
+
+File: files/4211891009f4366e7bb5f1a962f7b015.png Graphic file (type bmp)
+<files/4211891009f4366e7bb5f1a962f7b015.png>
+
+Overfull \hbox (43.5pt too wide) in paragraph at lines 220--220
+[]\TU/lmtt/m/n/10 display(Image(filename=str(KMEANS_DIR / "cluster_map_2.png"),
+ width=600 ))[] 
+ []
+
+File: files/b3b9371b0dca62c4f7a1bef63de5d7da.png Graphic file (type bmp)
+<files/b3b9371b0dca62c4f7a1bef63de5d7da.png>
+[25] [26]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 234--234
+[]\TU/lmtt/m/n/10 display(Image(filename=str(KMEANS_DIR / "cluster_heatmap_4.pn
+g")))[] 
+ []
+
+File: files/09eb4b2ceb46fbd1fd02d29cb2758802.png Graphic file (type bmp)
+<files/09eb4b2ceb46fbd1fd02d29cb2758802.png>
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 240--240
+[]\TU/lmtt/m/n/10 display(Image(filename=str(KMEANS_DIR / "cluster_map_4.png"),
+ width=600))[] 
+ []
+
+File: files/3af5292881bc4afeebf7586a77407905.png Graphic file (type bmp)
+<files/3af5292881bc4afeebf7586a77407905.png>
+[27]
+Overfull \hbox (15.00836pt too wide) in paragraph at lines 252--253
+[]\TU/lmr/bx/n/10 Breitling Snyder: \TU/lmr/m/n/10 Collaborated with Sunghyun o
+n the kmeans_analysis.ipynb
+ []
+
+[28] (./main.aux)
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 186E67A9FD76687CA01E9B0A92261908;1326.
+ ) 
+Here is how much of TeX's memory you used:
+ 9955 strings out of 478151
+ 166865 string characters out of 5852999
+ 466389 words of memory out of 5000000
+ 30407 multiletter control sequences out of 15000+600000
+ 472427 words of font info for 47 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 70i,6n,76p,1857b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on main.xdv (28 pages, 235324 bytes).
