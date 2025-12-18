@@ -1,8 +1,8 @@
 ENV_NAME = ligo
 
 NOTEBOOKS = \
-	map_descriptive_analysis.ipynb \
-	chart_descriptive_analysis.ipynb \
+	map_analysis.ipynb \
+	chart_analysis.ipynb \
 	kmeans_analysis.ipynb 
 
 .PHONY: env all test

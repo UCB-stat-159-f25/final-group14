@@ -2,9 +2,17 @@
 
 # Final Project: Environmental Burden and Race
 
-## Binder Link:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-f25/final-group14/main)
 
+## Repository Structure
+- `data/`: Contains the raw CalEnviroScreen 4.0 shapefiles and `calenviroscreen40.csv`, a tabular version of the dataset with all non-geometric attributes
+- `visualizations/`: Contains the generated figures and maps
+- `analysis/`: Contains `chart_analysis.ipynb`, `map_analysis.ipynb`, and `kmeans_analysis.ipynb`
+- `main.ipynb`: Overview notebook that combines results from the chart, map, and K-means analysis
+- `CEStools/`: Contains utility functions and `tests/`
+- `main.ipynb`: Main project notebook, providing an overview of the analysis and results 
+- `environment.yml`: Environment file specifying the required packages for the project  
+- `Makefile`: Makefile to automate environment setup and execution of analysis notebooks
 
 ## License
 
