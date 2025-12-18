@@ -21,17 +21,15 @@ project:
 
     - title: Exploratory Analysis
       children:
-        - file: chart_analysis.ipynb
+        - file: analysis/chart_analysis.ipynb
           title: Descriptive Charts
-        - file: map_analysis.ipynb
+        - file: analysis/map_analysis.ipynb
           title: Spatial Maps
 
     - title: Modeling
       children:
-        - file: kmeans_analysis.ipynb
+        - file: analysis/kmeans_analysis.ipynb
           title: Clustering (K-Means)
 
 site:
   template: book-theme
-  options:
-    logo: site_logo.png
