@@ -21,9 +21,9 @@ project:
 
     - title: Exploratory Analysis
       children:
-        - file: chart_descriptive_analysis.ipynb
+        - file: chart_analysis.ipynb
           title: Descriptive Charts
-        - file: map_descriptive_analysis.ipynb
+        - file: map_analysis.ipynb
           title: Spatial Maps
 
     - title: Modeling
