@@ -4,6 +4,8 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-f25/final-group14/main)
 
+[![DOI](https://zenodo.org/badge/1109449799.svg)](https://doi.org/10.5281/zenodo.17971554)
+
 This project uses the CalEnviroScreen 4.0 dataset to analyze the relationships between environmental pollution indicators, socioeconomic vulnerability measures, and racial composition. Geographic data are used to visualize these variables on maps, and K-means clustering is applied to group census tracts with similar environmental and socioeconomic profiles.
 
 ## Repository Structure
