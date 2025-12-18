@@ -1,23 +1,37 @@
 version: 1
 project:
   id: ae63f3fe-0232-4ecb-b71e-2026b0890c64
+  title: Environmental Burden and Race (CalEnviroScreen 4.0)
   authors:
-  - Sunghyun Ahn
-  - Megan Dhillon
-  - Yoohan Park
-  - Breitling Snyder
+    - Sunghyun Ahn
+    - Megan Dhillon
+    - Yoohan Park
+    - Breitling Snyder
   bibliography: references.bib
-  binder:
-      url: https://mybinder.org/v2/gh/UCB-stat-159-f25/final-group14/main
   github: https://github.com/UCB-stat-159-f25/final-group14
+
   toc:
     - file: README.md
-    - file: main.ipynb
-    - file: chart_descriptive_analysis.ipynb
-    - file: map_descriptive_analysis.ipynb
-    - file: kmeans_analysis.ipynb
-    
+      title: Home
+
+    - title: Main Narrative
+      children:
+        - file: main.ipynb
+          title: Main (Paper)
+
+    - title: Exploratory Analysis
+      children:
+        - file: chart_descriptive_analysis.ipynb
+          title: Descriptive Charts
+        - file: map_descriptive_analysis.ipynb
+          title: Spatial Maps
+
+    - title: Modeling
+      children:
+        - file: kmeans_analysis.ipynb
+          title: Clustering (K-Means)
+
 site:
   template: book-theme
   options:
-      logo: site_logo.png
+    logo: site_logo.png
