@@ -13,8 +13,8 @@ project:
     - file: README.md
     - file: main.ipynb
     - file: chart_descriptive_analysis.ipynb
-    - file: kmeans_analysis.ipynb
     - file: map_descriptive_analysis.ipynb
+    - file: kmeans_analysis.ipynb
     
 site:
   template: book-theme
