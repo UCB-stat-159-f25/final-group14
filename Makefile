@@ -1,9 +1,9 @@
 ENV_NAME = ligo
 
 NOTEBOOKS = \
-	map_analysis.ipynb \
-	chart_analysis.ipynb \
-	kmeans_analysis.ipynb 
+	analysis/map_analysis.ipynb \
+	analysis/chart_analysis.ipynb \
+	analysis/kmeans_analysis.ipynb 
 
 .PHONY: env all test
 
@@ -17,3 +17,8 @@ all:
 	@echo ">>> Executing all notebooks..."
 	jupyter nbconvert --to notebook --execute $(NOTEBOOKS) --inplace
 	@echo ">>> All notebooks executed successfully."
+
+test:
+	@echo ">>> Running all tests..."
+	PYTHONPATH=. pytest
+	@echo ">>> All tests passed successfully."
