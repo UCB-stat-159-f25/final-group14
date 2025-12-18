@@ -1,13 +1,14 @@
 version: 1
 project:
   id: ae63f3fe-0232-4ecb-b71e-2026b0890c64
-  title: Final Project
   authors:
   - Sunghyun Ahn
   - Megan Dhillon
   - Yoohan Park
   - Breitling Snyder
   bibliography: references.bib
+  binder:
+      url: https://mybinder.org/v2/gh/UCB-stat-159-f25/final-group14/main
   github: https://github.com/UCB-stat-159-f25/final-group14
   toc:
     - file: README.md
