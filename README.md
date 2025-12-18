@@ -12,4 +12,4 @@ This project is licensed under the BSD 3-Clause License.
 
 ## Bibliography 
 
-We used the CalEnviroScreen 4.0 data dictionary to help interpret score components and variable definitions [@calenviroscreen40].
+Our analysis uses the CalEnviroScreen 4.0 census tract shapefiles [@calenviroscreen40shp]. We also used the CalEnviroScreen 4.0 data dictionary to help interpret score components and variable definitions [@calenviroscreen40].
