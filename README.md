@@ -27,6 +27,7 @@ cd final-group14
 2. Create and activate the environment:
 ```bash
 make env
+conda activate CES
 ```
 
 3. Execute all notebooks:
