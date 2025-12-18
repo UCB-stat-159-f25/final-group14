@@ -5,7 +5,7 @@ NOTEBOOKS = \
 	chart_descriptive_analysis.ipynb \
 	kmeans_analysis.ipynb 
 
-.PHONY: env all
+.PHONY: env all test
 
 env:
 	@echo ">>> Creating conda environment: $(ENV_NAME)"
@@ -17,3 +17,6 @@ all:
 	@echo ">>> Executing all notebooks..."
 	jupyter nbconvert --to notebook --execute $(NOTEBOOKS) --inplace
 	@echo ">>> All notebooks executed successfully."
+
+test:
+	pytest -q

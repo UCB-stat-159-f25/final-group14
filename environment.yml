@@ -1,0 +1,17 @@
+name: ligo
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - ipykernel
+  - jupyter
+  - nbconvert
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - geopandas
+  - proj
+  - proj-data
