@@ -1,4 +1,4 @@
-ENV_NAME = ligo
+ENV_NAME = CES
 
 NOTEBOOKS = \
 	analysis/map_analysis.ipynb \
