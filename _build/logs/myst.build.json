@@ -1,8 +1,6 @@
 {
   "input": {
-    "files": [
-      "main.ipynb"
-    ],
+    "files": [],
     "opts": {
       "execute": false,
       "pdf": true,
@@ -27,6 +25,42 @@
     }
   },
   "exports": [
+    {
+      "format": "pdf",
+      "output": "/home/jovyan/Untitled Folder/final-group14/pdf_builds/map_descriptive_analysis.pdf",
+      "articles": [
+        {
+          "file": "/home/jovyan/Untitled Folder/final-group14/analysis/map_analysis.ipynb",
+          "level": 0
+        }
+      ],
+      "$file": "/home/jovyan/Untitled Folder/final-group14/analysis/map_analysis.ipynb",
+      "$project": "/home/jovyan/Untitled Folder/final-group14"
+    },
+    {
+      "format": "pdf",
+      "output": "/home/jovyan/Untitled Folder/final-group14/pdf_builds/chart_descriptive_analysis.pdf",
+      "articles": [
+        {
+          "file": "/home/jovyan/Untitled Folder/final-group14/analysis/chart_analysis.ipynb",
+          "level": 0
+        }
+      ],
+      "$file": "/home/jovyan/Untitled Folder/final-group14/analysis/chart_analysis.ipynb",
+      "$project": "/home/jovyan/Untitled Folder/final-group14"
+    },
+    {
+      "format": "pdf",
+      "output": "/home/jovyan/Untitled Folder/final-group14/pdf_builds/kmeans_analysis.pdf",
+      "articles": [
+        {
+          "file": "/home/jovyan/Untitled Folder/final-group14/analysis/kmeans_analysis.ipynb",
+          "level": 0
+        }
+      ],
+      "$file": "/home/jovyan/Untitled Folder/final-group14/analysis/kmeans_analysis.ipynb",
+      "$project": "/home/jovyan/Untitled Folder/final-group14"
+    },
     {
       "format": "pdf",
       "output": "/home/jovyan/Untitled Folder/final-group14/pdf_builds/main.pdf",

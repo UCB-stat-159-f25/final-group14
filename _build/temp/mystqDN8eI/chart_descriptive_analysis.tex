@@ -1,0 +1,350 @@
+% Created with jtex v.1.0.20
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{datetime}
+\usepackage{graphicx}
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  imports  %%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% colors for hyperlinks
+\hypersetup{colorlinks=true, allcolors=blue}
+
+\newcommand{\logo}{
+  \href{https://curvenote.com}{\includegraphics[width=2cm]{curvenote.png}}
+}
+
+\title{Chart Descriptive Analysis}
+
+\author{Sunghyun Ahn \and Megan Dhillon \and Yoohan Park \and Breitling Snyder}
+
+\newdate{articleDate}{18}{12}{2025}
+\date{\displaydate{articleDate}}
+
+\begin{document}
+\maketitle
+\begin{center}\logo\end{center}
+
+
+\begin{verbatim}
+import geopandas as gpd
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+import sys
+sys.path.append("..")
+from CEStools.utils import clean_data
+\end{verbatim}
+
+We sought to reproduce the charts of `Analysis of Race/Ethnicity and CalEnviroScreen 4.0 Scores' report.
+
+\begin{verbatim}
+shape = gpd.read_file('../data/calenviroscreen40_shp/CES4 Final Shapefile.shp')
+
+shape.columns
+\end{verbatim}
+
+\begin{verbatim}
+Index(['Tract', 'ZIP', 'County', 'ApproxLoc', 'TotPop19', 'CIscore',
+       'CIscoreP', 'Ozone', 'OzoneP', 'PM2_5', 'PM2_5_P', 'DieselPM',
+       'DieselPM_P', 'Pesticide', 'PesticideP', 'Tox_Rel', 'Tox_Rel_P',
+       'Traffic', 'TrafficP', 'DrinkWat', 'DrinkWatP', 'Lead', 'Lead_P',
+       'Cleanup', 'CleanupP', 'GWThreat', 'GWThreatP', 'HazWaste', 'HazWasteP',
+       'ImpWatBod', 'ImpWatBodP', 'SolWaste', 'SolWasteP', 'PollBurd',
+       'PolBurdSc', 'PolBurdP', 'Asthma', 'AsthmaP', 'LowBirtWt', 'LowBirWP',
+       'Cardiovas', 'CardiovasP', 'Educatn', 'EducatP', 'Ling_Isol',
+       'Ling_IsolP', 'Poverty', 'PovertyP', 'Unempl', 'UnemplP', 'HousBurd',
+       'HousBurdP', 'PopChar', 'PopCharSc', 'PopCharP', 'Child_10',
+       'Pop_10_64', 'Elderly65', 'Hispanic', 'White', 'AfricanAm', 'NativeAm',
+       'OtherMult', 'Shape_Leng', 'Shape_Area', 'AAPI', 'geometry'],
+      dtype='object')
+\end{verbatim}
+
+\begin{verbatim}
+shape.head()
+\end{verbatim}
+
+\bigskip\noindent
+\begin{tabular}{p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}p{\dimexpr 0.045\linewidth-2\tabcolsep}}
+\toprule
+ & Tract & ZIP & County & ApproxLoc & TotPop19 & CIscore & CIscoreP & Ozone & OzoneP & PM2\_5 & ... & Elderly65 & Hispanic & White & AfricanAm & NativeAm & OtherMult & Shape\_Leng & Shape\_Area & AAPI & geometry \\
+\hline
+0 & 6.083002e+09 & 93454 & Santa Barbara & Santa Maria & 4495 & 36.019653 & 69.162885 & 0.034190 & 10.566273 & 7.567724 & ... & 12.5028 & 68.9210 & 20.8899 & 0.4004 & 0.2670 & 1.3126 & 6999.357689 & 2.847611e+06 & 8.2091 & POLYGON ((-39795.07 -341919.191, -38126.384 -3... \\
+\hline
+1 & 6.083002e+09 & 93455 & Santa Barbara & Santa Maria & 13173 & 37.030667 & 70.637922 & 0.035217 & 11.561917 & 7.624775 & ... & 5.3519 & 78.6229 & 13.2240 & 2.5051 & 0.0000 & 0.9489 & 19100.578232 & 1.635292e+07 & 4.6990 & POLYGON ((-39795.07 -341919.191, -39803.632 -3... \\
+\hline
+2 & 6.083002e+09 & 93454 & Santa Barbara & Santa Maria & 2398 & 31.213140 & 61.069087 & 0.034190 & 10.566273 & 7.548835 & ... & 12.8857 & 65.7214 & 30.6088 & 0.9591 & 0.0000 & 2.1685 & 4970.985897 & 1.352329e+06 & 0.5421 & POLYGON ((-38115.747 -341130.248, -38126.384 -... \\
+\hline
+3 & 6.083002e+09 & 93455 & Santa Barbara & Orcutt & 4496 & 6.639331 & 5.988401 & 0.036244 & 13.615432 & 7.660570 & ... & 14.4128 & 22.9537 & 69.1948 & 0.9342 & 0.7117 & 2.5356 & 6558.956012 & 2.417717e+06 & 3.6699 & POLYGON ((-37341.662 -348530.437, -37252.307 -... \\
+\hline
+4 & 6.083002e+09 & 93455 & Santa Barbara & Orcutt & 4008 & 14.022852 & 23.121533 & 0.036244 & 13.615432 & 7.663210 & ... & 18.8872 & 33.4082 & 59.7804 & 0.6986 & 1.4721 & 1.3723 & 6570.368730 & 2.608422e+06 & 3.2685 & POLYGON ((-39465.107 -348499.262, -38244.305 -... \\
+\hline
+\bottomrule
+\end{tabular}
+
+\bigskip
+
+5 rows $\times$ 67 columns
+
+\begin{verbatim}
+df = clean_data(shape)
+
+race_cols = ['Hispanic', 'White', 'AfricanAm', 'NativeAm', 'OtherMult', 'AAPI']
+\end{verbatim}
+
+\begin{verbatim}
+df['sum'] = df.loc[:, 'Hispanic'] + df.loc[:, 'White'] + df.loc[:, 'AfricanAm'] + df.loc[:, 'NativeAm'] + df.loc[:, 'OtherMult']+df.loc[:, 'AAPI']
+df[race_cols + ['sum']].describe()
+\end{verbatim}
+
+\bigskip\noindent
+\begin{tabular}{p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}}
+\toprule
+ & Hispanic & White & AfricanAm & NativeAm & OtherMult & AAPI & sum \\
+\hline
+count & 8011.000000 & 8011.000000 & 8011.000000 & 8011.000000 & 8011.000000 & 8011.000000 & 8011.000000 \\
+\hline
+mean & 38.090437 & 38.671210 & 5.566892 & 0.418729 & 3.267521 & 13.985211 & 100.000000 \\
+\hline
+std & 26.434934 & 25.957581 & 8.575135 & 2.225242 & 2.445139 & 15.655214 & 0.000069 \\
+\hline
+min & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 0.000000 & 99.999800 \\
+\hline
+25\% & 15.671250 & 14.726950 & 0.835100 & 0.000000 & 1.393800 & 3.234700 & 100.000000 \\
+\hline
+50\% & 30.939400 & 37.246200 & 2.565900 & 0.000000 & 2.846400 & 8.429500 & 100.000000 \\
+\hline
+75\% & 58.169800 & 60.991000 & 6.648450 & 0.360400 & 4.703750 & 18.505750 & 100.000000 \\
+\hline
+max & 100.000000 & 100.000000 & 84.708200 & 100.000000 & 17.065300 & 94.549900 & 100.000200 \\
+\hline
+\bottomrule
+\end{tabular}
+
+\bigskip
+
+We verified that the race/ethnicity proportions within each county sum to 100\%, which supports the reliability of the dataset.
+
+\textbf{Figure 1. CalEnviroScreen 4.0 Score by Racial or Ethnic Group}
+
+\includegraphics[width=0.7\linewidth]{files/reported_fig1-790cd40c874b0e30fbb25b4aa290536b.png}
+
+The original report generated this figure using individual-level data, where each observation represents a single Californian. With this structure, they were able to assign each person a CalEnviroScreen 4.0 percentile score based on their census tract and then group individuals by race/ethnicity to compute the accurate score distribution for each group.
+
+However, our dataset is at the county level. While we had the total population data, generating the long-format dataset by repeatedly appending observations was avoided due to high time consumption. Thus we approximately generated the boxplot by assigning each county to the race/ethnicity group with the highest proportion.
+
+\begin{verbatim}
+df.loc[:, 'major_race'] = df[race_cols].idxmax(axis=1)
+median = df.groupby('major_race')['CIscoreP'].median().sort_values()
+median_order = median.index
+sns.boxplot(data= df, x='major_race', y='CIscoreP', order= median_order, palette="Set1", hue = 'major_race', legend=False)
+plt.title('CalEnviroScreen 4.0 Percentile Scores by Majority Race/Ethnicity')
+for tick, label in enumerate(median_order):
+    median_value = median[label]
+    plt.text(tick, median_value+2, f'{median_value:.1f}', horizontalalignment='center')
+
+plt.savefig("../visualizations/descriptive_charts/fig1_majorityrace_BaW.png", dpi=300, bbox_inches="tight")
+\end{verbatim}
+
+\begin{verbatim}
+/var/folders/0k/jn4h9ptx7_500msv80bg_rcm0000gn/T/ipykernel_9804/928823105.py:1: FutureWarning: The behavior of DataFrame.idxmax with all -NA values, or any -NA and skipna=False, is deprecated. In a future version this will raise ValueError
+  df.loc[:, 'major_race'] = df[race_cols].idxmax(axis=1)
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth]{files/15e720d8e979dd898ccb73cdff7f51ec.png}
+
+\begin{verbatim}
+df['major_race'].value_counts()
+\end{verbatim}
+
+\begin{verbatim}
+major_race
+White        3853
+Hispanic     3279
+AAPI          763
+AfricanAm     112
+NativeAm        4
+Name: count, dtype: int64
+\end{verbatim}
+
+The comparison between the original figure 1 and the reproduced analysis confirms the severe structural environment injustice in California. The African American (corresponding to Black) and Hispanic (corresponding to Latino) groups shows the consistently highest median vulnerability score, and the White group shows the lowest. This indicates that Hispanic and African American populations tend to live in communities with higher pollution burdens and vulnerabilities than the other/racial/ethnic groups analyzed. \newline
+\newline
+However, the methodology used for the reproduction seemingly inflated the median scores significantly compared to the original report. Also, the extremely low count for the Native American group (n=4) makes its derived median unreliable for comparison purposes.
+
+\textbf{Figure 2. Race in the Least and Most Impacted Census Tracts of CalEnviroScreen 4.0.}
+
+\includegraphics[width=0.7\linewidth]{files/reported_fig2-2742ba030148bf2a554ed00c076dd4c3.png}
+
+\begin{verbatim}
+bottom = df[df['CIscoreP'] <= 10]
+top = df[df['CIscoreP'] >= 90]
+
+bottom_white = bottom['White'].mean()
+bottom_poc = 100 - bottom_white
+
+top_white = top['White'].mean()
+top_poc = 100 - top_white
+
+labels = ['White', 'People of Color']
+bottom_sizes = [bottom_white, bottom_poc]
+top_sizes = [top_white, top_poc]
+
+fig, ax = plt.subplots(1, 2, figsize = (10, 5))
+ax[0].pie(bottom_sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+ax[0].set_title('10% least impacted neighborhoods')
+ax[1].pie(top_sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+ax[1].set_title('10% most impacted neighborhoods')
+
+plt.savefig("../visualizations/descriptive_charts/fig2_topbottom_piechart.png", dpi=300, bbox_inches="tight")
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth]{files/6c82811389e4a56de6dae3b6a62ea03f.png}
+
+\textbf{Figure 3. Racial Makeup of Each Decile of CalEnviroScreen 4.0 Score.}
+
+\includegraphics[width=0.7\linewidth]{files/reported_fig3-b6283b14e3d92863a4bfc5e6b1e2e9c8.png}
+
+\begin{verbatim}
+df['decile'] = pd.qcut(df['CIscoreP'], 10, labels=False) + 1
+decile_means = df.groupby('decile')[race_cols].mean()
+decile_means.index = list(range(1, 11))
+ca_means = df[race_cols].mean()
+ca_df = ca_means.to_frame().T
+ca_df.index = ['CA']
+df_plot = pd.concat([decile_means, ca_df], axis=0)
+
+plot_order = ['White', 'Hispanic', 'AAPI', 'AfricanAm', 'OtherMult', 'NativeAm']
+
+fig, ax = plt.subplots(figsize=(10, 8))
+df_plot[plot_order].plot(kind='barh', stacked=True, ax=ax)
+ax.set_ylabel('CalEnviroScreen 4.0 Decile \n< - Increasing Disadvantage')
+ax.invert_yaxis()
+ax.legend(loc='lower center', bbox_to_anchor = (0.5, -0.15), ncol = 6)
+plt.title('Racial Makeup of Each Decile of CalEnviroScreen 4.0 Score')
+
+plt.savefig("../visualizations/descriptive_charts/fig3_racialmakeupbydecile_barchart.png", dpi=300, bbox_inches="tight")
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth]{files/6ca1af780efa2d488f342f1ad3b4778a.png}
+
+The results are consistent with the original conclusions, reaffirming the environmental racial inequity within California.
+As environmental vulnerability increases (moving to higher deciles), the proportion of Hispanic and African American residents increases overwhelmingly. Conversely, the proportion of White residents decreases sharply as the disadvantage lessens, suggesting they predominantly reside in the most environmentally safe areas. This inequality is further highlighted when compared to the average bar representing the entire state of California at the bottom.
+
+\textbf{Figure 4. Most prevalent race by census tracts were overlaid with most disadvantaged 10\%
+CalEnviroScreen scores.}
+
+\includegraphics[width=0.7\linewidth]{files/reported_fig4-5ab746d5223a9ba32f6d9d3289b575d4.png}
+
+\begin{verbatim}
+top_counts = top['major_race'].value_counts()
+total_counts = df['major_race'].value_counts()
+top_counts, total_counts
+\end{verbatim}
+
+\begin{verbatim}
+(major_race
+ Hispanic     745
+ AfricanAm     21
+ White         19
+ AAPI           9
+ Name: count, dtype: int64,
+ major_race
+ White        3853
+ Hispanic     3279
+ AAPI          763
+ AfricanAm     112
+ NativeAm        4
+ Name: count, dtype: int64)
+\end{verbatim}
+
+\begin{verbatim}
+top_ratio = (top_counts / total_counts).sort_values(ascending=True) * 100
+plt.barh(top_ratio.index, top_ratio.values, height=0.5, color=sns.color_palette("Set1"))
+for i, v in enumerate(top_ratio.values):
+    plt.text(v, i, f'{v:.1f}%', va='center')
+plt.title("Percent of Each Racial/Ethnic Group's Most \n Prevalent Census Tracts That are in the Highest \n 10% of Scoring Communities")
+
+plt.savefig("../visualizations/descriptive_charts/fig4_top10perctracts_barchart.png", dpi=300, bbox_inches="tight")
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth]{files/59fd9abfdd533dca797065b5e5c0b4b2.png}
+
+We were able to reproduce the exact same numerical values as the original report. Although the proportion of African Americans appears small in Figure 3, the fact that 18\% of counties where African Americans are the major racial group are environmentally vulnerable (21 out of 112 counties) is not that different from the Hispanic proportion. This shows why attention should be paid not only to Hispanics but also to African Americans.
+
+\textbf{Additional Analysis}
+
+\begin{verbatim}
+def select_high_correlated_vars(df, race_cols, threshold = 0.6):
+    corr = df.drop(['major_race'], axis = 1).corr()
+    vars = pd.DataFrame()
+    for race_col in race_cols:
+        race_corr = corr[race_col].drop(race_cols)
+        selected = race_corr[abs(race_corr) > threshold].sort_values(ascending=False)
+        vars = pd.concat([vars, selected], axis=1)
+    return vars
+
+select_high_correlated_vars(df, race_cols)
+\end{verbatim}
+
+\bigskip\noindent
+\begin{tabular}{p{\dimexpr 0.143\linewidth-2\tabcolsep}p{\dimexpr 0.143\linewidth-2\tabcolsep}p{\dimexpr 0.143\linewidth-2\tabcolsep}p{\dimexpr 0.143\linewidth-2\tabcolsep}p{\dimexpr 0.143\linewidth-2\tabcolsep}p{\dimexpr 0.143\linewidth-2\tabcolsep}p{\dimexpr 0.143\linewidth-2\tabcolsep}}
+\toprule
+ & Hispanic & White & AfricanAm & NativeAm & OtherMult & AAPI \\
+\hline
+EducatP & 0.853965 & -0.775303 & NaN & NaN & NaN & NaN \\
+\hline
+CIscoreP & 0.741219 & -0.725284 & NaN & NaN & NaN & NaN \\
+\hline
+decile & 0.738075 & -0.720705 & NaN & NaN & NaN & NaN \\
+\hline
+PopCharP & 0.729622 & -0.713956 & NaN & NaN & NaN & NaN \\
+\hline
+PovertyP & 0.675304 & NaN & NaN & NaN & NaN & NaN \\
+\hline
+Ling\_IsolP & 0.607499 & -0.753909 & NaN & NaN & NaN & NaN \\
+\hline
+\bottomrule
+\end{tabular}
+
+\bigskip
+
+Excluding the CalEnviroScreen score, the correlation analysis shows that areas with a higher Hispanic population tend to have a larger proportion of residents with less than a high school education, higher poverty rates, and greater linguistic isolation, meaning more households with limited English proficiency. In contrast, areas with a higher White populations tend to have higher education levels and fewer linguistically isolated households.
+
+\begin{verbatim}
+bottom = df[df['EducatP'] <= 10]
+top = df[df['EducatP'] >= 90]
+
+bottom_white = bottom['White'].mean()
+bottom_hispanic = bottom['Hispanic'].mean()
+bottom_poc = 100 - bottom_white - bottom_hispanic
+
+top_white = top['White'].mean()
+top_hispanic = top['Hispanic'].mean()
+top_poc = 100 - top_white - top_hispanic
+
+labels = ['White', 'Hispanic', 'Other People of Color']
+bottom_sizes = [bottom_white, bottom_hispanic, bottom_poc]
+top_sizes = [top_white, top_hispanic, top_poc]
+
+fig, ax = plt.subplots(1, 2, figsize = (10, 5))
+ax[0].pie(bottom_sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+ax[0].set_title('10% lowest poverty rates neighborhoods')
+ax[1].pie(top_sizes, labels=labels, autopct='%1.1f%%', startangle=90)
+ax[1].set_title('10% lowest education neighborhoods')
+
+plt.savefig("../visualizations/descriptive_charts/fig5_topbottom_educatP_piechart.png", dpi=300, bbox_inches="tight")
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth]{files/f4408f29a54f14f60eebbbb10878e0e6.png}
+
+In the 10\% lowest education neighborhoods, the Hispanic population accounts for an average of 82\%. This concentration is notably stronger than in neighborhoods grouped by other variables.
+
+
+\end{document}
